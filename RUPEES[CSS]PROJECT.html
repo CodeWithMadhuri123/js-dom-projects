@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gold Price Converter</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #b89022;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            width: 350px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        h2 {
+            color: #b8860b;
+            margin-bottom: 10px;
+        }
+
+        img {
+            width: 100px;
+            display: block;
+            margin: 0 auto 15px auto;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            color: black;
+            text-align: left;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #b8860b;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #b8860b;
+            color: white;
+            border: none;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #a47509;
+        }
+
+        #result {
+            margin-top: 15px;
+            color: #a47509;
+            font-weight: bold;
+            white-space: pre-line;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://static.vecteezy.com/system/resources/previews/037/752/297/non_2x/digital-currency-indian-rupee-symbol-on-golden-coin-vector.jpg" alt="Gold">
+        <h2>Gold Converter</h2>
+
+        <label for="conversion">Choose conversion:</label>
+        <select id="conversion">
+            <option value="gramToRupee">Grams to Rupees</option>
+            <option value="rupeeToGram">Rupees to Grams</option>
+        </select>
+
+        <label for="city">Choose your city:</label>
+        <select id="city">
+            <option value="Chennai">Chennai</option>
+            <option value="Mumbai">Mumbai</option>
+            <option value="Bangalore">Bangalore</option>
+        </select>
+
+        <label for="carat">Choose carat value:</label>
+        <select id="carat">
+            <option value="24">24K</option>
+            <option value="22">22K</option>
+            <option value="18">18K</option>
+        </select>
+
+        <label for="value">Enter value:</label>
+        <input type="number" id="value" placeholder="e.g. 10, 15000">
+
+        <button onclick="calculate()">Convert</button>
+
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function calculate() {
+            const conversion = document.getElementById('conversion').value;
+            const city = document.getElementById('city').value;
+            const carat = parseInt(document.getElementById('carat').value);
+            const inputValue = parseFloat(document.getElementById('value').value);
+
+            if (isNaN(inputValue) || inputValue <= 0) {
+                document.getElementById('result').innerText = "Please enter a valid number.";
+                return;
+            }
+
+          
+            const goldRates = {
+                Chennai: {24: 9429, 22: 8980, 18: 7355},
+                Mumbai: {24: 9513, 22: 9060, 18: 7349},
+                Bangalore: {24: 9960, 22: 9095, 18: 7278}
+            };
+
+            const rate = goldRates[city][carat];
+            let resultText = "";
+
+            if (conversion === "gramToRupee") {
+                const total = inputValue * rate;
+                resultText = `${inputValue} grams of ${carat}K gold in ${city}\nis worth ₹${total.toFixed(2)}`;
+            } else {
+                const grams = inputValue / rate;
+                resultText = `₹${inputValue} of ${carat}K gold in ${city}\nis equal to ${grams.toFixed(2)} grams`;
+            }
+
+            document.getElementById('result').innerText = resultText;
+        }
+    </script>
+</body>
+</html>

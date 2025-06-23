@@ -1,0 +1,93 @@
+<html>
+    <head>
+        <title>Celsius to Farenheit Converter</title>
+
+        <style>
+            body{
+                font-family: sans-serif;
+                background-color: #eef2f3;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh; 
+                /* vh=view point of height */
+            }
+
+            .container{
+                background: white;
+                padding: 30px;
+                border-radius: 10px;
+                width: 300px;
+            }
+            
+            h2{
+                text-align: center;
+                margin-bottom: 20px;
+                color: #333;
+            }
+
+            label{
+                display: block;
+                margin-bottom: 5px;
+                color: #444;
+            }
+
+            input{
+                width: 100%;
+                padding: 10px;
+                margin-bottom: 15px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+            }
+
+            button{
+                width: 100%;
+                padding: 10px;
+                background-color: #28a745;
+                color: white;
+                border: none;
+                font-weight: bold;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+
+            button:hover{
+                background-color: #218838;
+            }
+
+            #result{
+                text-align: center;
+                margin-top: 15px;
+                color: #007bff;
+            }       
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <h2>Celsius to Farenheit</h2>
+
+            <label>Enter the temperature in celsius :</label>
+            <input type="number" id="celsius" placeholder="eg...32,35">
+
+
+            <button onclick="convertTemp()">Convert</button>
+
+            <h3 id="result"></h3>
+
+
+            <script>
+                function convertTemp(){
+                    const celsius=parseInt(document.getElementById('celsius').value)
+
+                    if(isNaN(celsius)){
+                        document.getElementById('result').innerHTML="Please Enter the valid number"
+                    }
+
+                    const Farenheit=(celsius*9/5)+32;
+                    document.getElementById('result').innerText=`Celsius - ${celsius} = farenheit - ${Farenheit}`
+                }
+            </script>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,170 @@
+<!-- getElementByName() Method -->
+
+<html>
+    <body>
+        HTML : <input name="skills" type="checkbox" value="HTML">
+        CSS & BS : <input name="skills" type="checkbox" value="CSS & BS">
+        JAVASCRIPT : <input name="skills" type="checkbox" value="JAVASCRIPT">
+        REACT JS : <input name="skills" type="checkbox" value="REACT JS">
+        REDUX TOOLKIT : <input name="skills" type="checkbox" value="REDUX TOOLKIT">
+
+        <h1>Number of Elements with name = "skills" :</h1>
+        <h1 id="demo"></h1>
+
+        <script>
+            let num = document.getElementsByName("skills").length
+            document.getElementById("demo").innerHTML=num
+        </script>
+    </body>
+</html>
+
+
+<!-- getElementsByTagName() Method -->
+
+<html>
+    <body>
+        <ul>
+            <li>HTML</li>
+            <li>CSS & BS</li>
+            <li>JAVASCRIPT</li>
+            <li>REACT JS</li>
+            <li>REDUX TOOLKIT</li>
+        </ul>
+        <h1 id="demo"></h1>
+
+        <script>
+            const collections=document.getElementsByTagName('li')
+            console.log(collections)
+
+            document.getElementById('demo').innerHTML=collections[2].innerHTML
+        </script>
+    </body>
+</html>
+
+
+<!-- getElementByClassName()Method -->
+
+<html>
+    <body>
+        <h1 class="example"></h1>
+        <h2 class="example"></h2>
+        <h3 class="example"></h3>
+        <h4 class="example"></h4>
+        <h5 class="example"></h5>
+
+        <script>
+            const collections=document.getElementsByClassName("example")
+            collections[0].innerHTML="REDUX TOOLKIT"
+            collections[1].innerHTML="REACT JS"
+            collections[2].innerHTML="JAVASCRIPT"
+            collections[3].innerHTML="CSS & BS"
+            collections[4].innerHTML="HTML"
+            console.log(collections)
+        </script>
+    </body>
+</html>
+
+
+<!-- createElement() -->
+
+<html>
+    <body>
+        <h1>Front End Web Development - React JS</h1>
+        <script>
+            const answer=document.createElement("h1")
+            answer.innerText="Welcome to Credo Systemz"
+            console.log(answer)
+// appendChild() = this command adds the output to the main screen and adds it last append means 'last'
+            document.body.appendChild(answer)     
+        </script>
+    </body>
+</html>
+
+
+<!-- removeChild() -->
+
+<html>
+    <body>
+        <button onclick="myfunction()">Remove</button>
+        <ul id="my list">
+            <li>HTML</li>
+            <li>CSS & BS</li>
+            <li>JAVASCRIPT</li>
+            <li>REACT JS</li>
+            <li>REDUX TOOLKIT</li>
+        </ul>
+
+        <script>
+            function myfunction(){
+                const list=document.getElementById('my list')
+                list.removeChild(list.firstElementChild)   
+//  you can also put lastElementChild
+//  if you want to remove in between you have to use looping statement that will be learnt in react
+             }
+         </script>
+     </body>
+</html>
+
+<!-- querySelector() -->
+
+<html>
+    <body>
+        <p>Front End Web Development - React JS</p>
+        <p class="example">Back End Web Devlopment - Spring Boot</p>
+
+        <script>
+            document.querySelector(".example").style.color="orange"
+            document.querySelector(".example").style.backgroundColor="black"
+            document.querySelector(".example").style.padding="20px"
+            document.querySelector(".example").style.color="10px"
+        </script>
+    </body>
+</html>
+
+<!-- QuerySelectorAll() -->
+
+<html>
+    <body>
+        <h1 class="example">Front End Web Devlopment - React JS</h1>
+        <h2 class="example">Back End Development - Spring Boot</h2>
+
+        <script>
+            list=document.querySelectorAll(".example")
+            for(i = 0; i < list.length; i++){
+                list[i].style.backgroundColor="black"
+                list[i].style.color="orange"
+                 list[i].style.padding="10px"
+            }
+        </script>
+    </body>
+</html>
+
+
+<!-- setAttribute() -->
+
+<html>
+    <head>
+        <style>
+            .democlass{
+                color: orange;
+                background-color: black;
+                margin: 20px;
+                padding: 20px;
+                border: 2px solid salmon;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1 id="answer">Welcome to Credo System</h1>
+
+        <button onclick="myfunction()">Add Class</button>
+
+        <script>
+        function myfunction(){
+            document.getElementById("answer").setAttribute("class" , "democlass")
+        }
+        </script>
+    </body>
+</html>
+

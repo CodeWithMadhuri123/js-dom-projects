@@ -1,0 +1,69 @@
+<!-- DOM = Document Object Model
+ITS LIKE A TREE FORMATION 
+                                          VISUAL REPRESENTATION OF DOM 
+                                                   
+                                                    HTML
+                                                     |
+                                             -----------------
+                                             |               |
+                                            HEAD            BODY
+                                             |               |
+                                            TITLE           DIV
+                                             |               |
+                                            TEXT        ------------
+                                                        |          |
+                                                        P    H1    UL
+                                                                   |
+                                                                   LI
+
+NODE IN HTML DOM - 3 TYPES OF NODES
+ELEMENT NODE - <a> , <img> , <h1> , <p>
+ATTRIBUTE NODE - <p> KULLA ATTRIBUTE IRUKUM ATHA ATTRIBUTE NODE  
+TEXT NODE - oru empty paragraph kulla date and time epdi note panrathu...oru text ah epdi customise panrathu !!
+
+                                            getElementById() Method -->
+   <!-- <html>
+    <head>
+        <title>DOM Session</title>
+    </head>
+    <body>
+        <p id = "message">Welcome to Credo Systemz</p>
+        <script>  //THIS TAG CAN BE MENTIONED IN HEAD TAG AS WELL
+            const answer = document.getElementById('message')
+            console.log(answer)
+            answer.style.color="orange"
+            answer.style.backgroundColor="black"
+            answer.style.padding="20px"
+            answer.style.margin="10px"
+        </script>
+    </body>
+   </html> -->
+
+                                           <!-- TO DISPLAY DATE AND TIME -->
+   <!-- <html>
+    <body>
+        <h1 id ="answer"></h1>
+        <button type="button" onclick="document.getElementById('answer').innerHTML=Date()">Click Me - Display Date and Time</button>
+    </body>
+   </html> -->
+
+                                          <!-- ON CLICKING THE MESSAGE CHANGES -->
+   <!-- <html>
+    <body>
+        <p id = "answer"> Welcome to Credo Systemz</p>
+        <button type = "button" onclick="document.getElementById('answer').innerHTML='Thanks to visit Credo Systemz'">Click Me</button>
+    </body>
+   </html> -->
+                                            <!-- BULB PROJECT -->
+<!-- ANYWHERE YOU GO THIS WILL BE THE FIRST PROJECT  -->
+ <!-- BULB PROJECT -->
+   <!-- <html>
+    <body>
+        <button onclick="document.getElementById('image').src='https://toppng.com/uploads/preview/light-bulb-on-off-png-11553940186lbyqngqg1y.png'">Turn on the light</button>
+        <img id="image" src="https://toppng.com/public/uploads/preview/light-bulb-on-off-png-115539402943y50vxr5yi.png" style="width:30%;">
+        <button onclick="document.getElementById('image').src='https://toppng.com/public/uploads/preview/light-bulb-on-off-png-115539402943y50vxr5yi.png'">Turn off the light</button>
+    </body>
+   </html> -->
+
+
+  
